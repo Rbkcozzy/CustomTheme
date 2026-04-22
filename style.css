@@ -27,7 +27,7 @@ body {
     right: 160px;
     width: 35vw;
     height: 100vh;
-    background: linear-gradient(to left, rgba(0, 0, 0, 1) 38%, rgba(0, 0, 0, 0.7) 69%, rgba(0, 0, 0, 0) 89%);
+    background: linear-gradient(to left, rgba(0, 0, 0, 1) 38%, rgba(0, 0, 0, 0.7) 49%, rgba(0, 0, 0, 0) 91%);
     pointer-events: none;
 }
 
