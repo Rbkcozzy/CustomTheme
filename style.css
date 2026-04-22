@@ -1,0 +1,377 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+    background-color: black;
+}
+
+#bg-video {
+  position: fixed;
+  top: 50%;
+  left: 32%;
+  max-width: 80%;
+  min-height: 27%;
+  transform: translate(-50%, -50%) scale(1.05);
+  filter: brightness(0.9);
+  background-color: black;
+  object-fit: fill;
+}
+
+.video-overlay {
+  position: fixed;
+    top: 0;
+    right: 160px;
+    width: 35vw;
+    height: 100vh;
+    background: linear-gradient(to left, rgba(0, 0, 0, 1) 38%, rgba(0, 0, 0, 0.7) 69%, rgba(0, 0, 0, 0) 89%);
+    pointer-events: none;
+}
+
+.overlay {
+  max-width: 75%;
+    position: absolute;
+    top: 19%;
+    left: 51%;
+    transform: translate(108%, 46%);
+    text-align: center;
+    color: white;
+    display: grid;
+    row-gap: 25px;
+}
+
+.weather {
+  font-size: 26px;
+    width : 15vw;
+    position: absolute;
+    top: 15%;
+    left: 70%;
+    transform: translate(42%, 4%);
+    color: white;
+    text-align: center;
+}
+
+#weather-temp {
+  font-size: 57px;
+  font-weight: bold;
+}
+
+#clock {
+  font-size: 16px;
+  margin-top: 9px;
+}
+
+/* ==================== SEARCH WRAPPER ==================== */
+.search-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+input#search {
+  font-size: 14px;
+  padding: 7px 12px 7px 16px;
+  border-radius: 20px;
+  border: none;
+  margin-top: 10px;
+  width: 21vw;
+  outline: none;
+  background: rgba(255,255,255,0.92);
+  color: #222;
+}
+
+input#search:focus {
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+
+/* ==================== HISTORI PENELUSURAN ==================== */
+.search-history-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 100%;
+  background: rgba(20, 20, 20, 0.97);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  display: none;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+
+.search-history-dropdown.show {
+  display: block;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  color: #ddd;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s;
+  gap: 8px;
+}
+
+.history-item:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+.history-item-text {
+  flex: 1;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.history-delete-btn {
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 0 2px;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+
+.history-delete-btn:hover {
+  color: #ff6b6b;
+}
+
+.history-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 14px 5px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.history-label {
+  font-size: 11px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.history-clear-btn {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 11px;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s;
+}
+
+.history-clear-btn:hover {
+  color: #ff6b6b;
+}
+
+/* ==================== FAVORIT PANEL ==================== */
+.favorites-panel {
+  width: 21vw;
+    margin-top: 14px;
+    background: rgba(15, 15, 15, 0.6);
+    border-radius: 14px;
+    padding: 10px 14px 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid #b8b8b8;
+    box-shadow: 0px 0px 25px 1px rgb(255 255 255 / 46%);
+}
+
+.favorites-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.favorites-title {
+  color: #bbb;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.add-fav-btn {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: #fff;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  font-size: 17px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.add-fav-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.favorites-list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.fav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border: 1px solid white;
+  border-radius: 14px;
+  color: #ddd;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s;
+  text-decoration: none;
+  position: relative;
+}
+
+.fav-item:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+.fav-favicon {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.fav-name {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fav-delete-btn {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0;
+  transition: opacity 0.15s, color 0.15s;
+  flex-shrink: 0;
+}
+
+.fav-item:hover .fav-delete-btn {
+  opacity: 1;
+}
+
+.fav-delete-btn:hover {
+  color: #ff6b6b;
+}
+
+.favorites-empty {
+  color: #555;
+  font-size: 12px;
+  text-align: center;
+  padding: 8px 0 4px;
+}
+
+/* ==================== MODAL ==================== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.modal-backdrop.show {
+  display: flex;
+}
+
+.modal {
+  background: rgba(22,22,22,0.98);
+  border-radius: 16px;
+  padding: 24px 28px;
+  width: 300px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.modal h3 {
+  color: #eee;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.modal input {
+  display: block;
+  width: 100%;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 9px;
+  padding: 9px 12px;
+  color: #eee;
+  font-size: 13px;
+  margin-bottom: 10px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.modal input:focus {
+  border-color: rgba(255,255,255,0.3);
+}
+
+.modal input::placeholder {
+  color: #555;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+  justify-content: flex-end;
+}
+
+.modal-cancel, .modal-save {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.modal-cancel {
+  background: rgba(255,255,255,0.07);
+  color: #aaa;
+}
+
+.modal-cancel:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+.modal-save {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+.modal-save:hover {
+  background: rgba(255,255,255,0.22);
+}

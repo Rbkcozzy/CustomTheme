@@ -1,0 +1,10 @@
+{
+  "name": "My Custom New Tab",
+  "description": "Custom new tab with video background",
+  "version": "1.0",
+  "manifest_version": 3,
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "permissions": []
+}

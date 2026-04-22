@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>New Tab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <video autoplay muted loop id="bg-video">
+    <source src="video.mp4" type="video/mp4">
+  </video>
+
+  <div class="video-overlay"></div>
+
+  <div class="weather">
+    <div id="weather-temp"></div>
+    <div id="weather-city"></div>
+    <h1 id="clock"></h1>
+  </div>
+
+  <div class="overlay">
+    <div class="search-wrapper">
+      <input type="text" placeholder="Search..." id="search" autocomplete="off">
+      <!-- Dropdown histori penelusuran -->
+      <div class="search-history-dropdown" id="search-history-dropdown"></div>
+    </div>
+
+    <!-- Panel Favorit (di bawah search bar) -->
+    <div class="favorites-panel" id="favorites-panel">
+      <div class="favorites-header">
+        <span class="favorites-title">Favorit</span>
+        <button class="add-fav-btn" id="add-fav-btn" title="Tambah favorit">+</button>
+      </div>
+      <div class="favorites-list" id="favorites-list"></div>
+    </div>
+  </div>
+
+  <!-- Modal Tambah Favorit -->
+  <div class="modal-backdrop" id="modal-backdrop">
+    <div class="modal">
+      <h3>Tambah Favorit</h3>
+      <input type="text" id="fav-name" placeholder="Nama situs..." maxlength="30">
+      <input type="text" id="fav-url" placeholder="URL (https://...)" >
+      <div class="modal-buttons">
+        <button class="modal-cancel" id="modal-cancel">Batal</button>
+        <button class="modal-save" id="modal-save">Simpan</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
