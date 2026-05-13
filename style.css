@@ -13,7 +13,7 @@ body {
   position: fixed;
   top: 50%;
   left: 32%;
-  max-width: 85%;
+  max-width: 80%;
   min-height: 27%;
   transform: translate(-50%, -50%) scale(1.05);
   filter: brightness(0.9);
