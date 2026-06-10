@@ -16,7 +16,7 @@ body {
   max-width: 80%;
   min-height: 27%;
   transform: translate(-50%, -50%) scale(1.05);
-  filter: brightness(0.9);
+  filter: brightness(0.8);
   background-color: black;
   object-fit: fill;
 }
