@@ -14,7 +14,7 @@ body {
   position: fixed;
   top: 50%;
   left: 32%;
-  max-width: 80%;
+  max-width: 77%;
   min-height: 27%;
   transform: translate(-50%, -50%) scale(1.05);
   filter: brightness(0.8);
@@ -34,20 +34,19 @@ body {
 
 .overlay {
   position: absolute;
-    top: 5%;
-    left: 51%;
-    transform: translate(110%, 46%);
-    text-align: center;
-    color: white;
-    display: grid;
-    row-gap: 14px;
+  left: 51%;
+  transform: translate(110%, 46%);
+  text-align: center;
+  color: white;
+  display: grid;
+  row-gap: 14px;
 }
 
 .weather {
   font-size: 26px;
     width: 16vw;
     position: absolute;
-    top: 12%;
+    top: 7%;
     left: 70%;
     transform: translate(42%, 4%);
     color: white;
